@@ -10,13 +10,13 @@ function Login({ providers }) {
   return (
     <div
       className="bg-black flex flex-col min-h-screen w-full 
-      justify-center items-center"
+      justify-center items-center space-y-4"
     >
       <Head>
         <title>Login - Spotify Clone</title>
         <link rel="icon" href="/logo.png" />
       </Head>
-      <div className="mx-auto">
+      <div className="mx-auto -mt-20 px-5">
         <Image
           src={logo}
           width="650"
@@ -30,7 +30,7 @@ function Login({ providers }) {
           <div key={provider.name} className="">
             <button
               className="bg-[#15D860] text-white font-semibold 
-              sm:text-lg py-5 px-10 rounded-full"
+              sm:text-lg py-4 px-5 md:py-5 md:px-10 rounded-full"
               onClick={() =>
                 signIn(provider.id, {
                   callbackUrl: "/",
