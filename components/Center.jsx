@@ -6,6 +6,9 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { playlistIdState, playlistState } from "../atoms/playlistAtom";
 import useSpotify from "../hooks/useSpotify";
 import Songs from "./Songs";
+import logo from '../public/logo.png';
+import Image from "next/image";
+import { currentSidebarShowState } from "../atoms/showSidebarAtom";
 
 const colors = [
     "from-blue-500",
@@ -31,9 +34,8 @@ function Center() {
     const [color, setColor] = useState(null);
     const playlistId = useRecoilValue(playlistIdState);
     const [playlist, setPlaylist] = useRecoilState(playlistState);
+    const [showSidebar, setShowSidebar] = useRecoilState(currentSidebarShowState);
     const spotifyAPI = useSpotify();
-
-
 
     useEffect(() => {
         setColor(shuffle(colors).pop());
@@ -50,7 +52,11 @@ function Center() {
 
     return (
         <div className="flex-grow relative h-screen overflow-y-scroll scrollbar-hide">
-            <header className='absolute top-5 right-8'>
+            <div className="absolute top-3 left-2 cursor-pointer md:hidden">
+                <Image onClick={() => setShowSidebar(!showSidebar)} src={logo} height={50} width={50} alt="" />
+            </div>
+
+            <header className="absolute top-3 md:top-5 right-2 md:right-8">
                 <div 
                     onClick={signOut} 
                     className="flex items-center bg-black space-x-3 opacity-80 hover:opacity-90 

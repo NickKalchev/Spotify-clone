@@ -73,7 +73,7 @@ function Player() {
 
             <div className="flex items-center justify-center space-x-3 md:space-x-4 order-1 md:order-2">
                 <SwitchHorizontalIcon className="button" />
-                <RewindIcon className="button" onClick={spotifyAPI.skipToPrevious()} />
+                <RewindIcon className="button" onClick={() => spotifyAPI.skipToPrevious()} />
 
                 {isPlaying ? (
                     <PlayIcon onClick={handlePlay} className="button w-10 h-10" />
@@ -81,7 +81,7 @@ function Player() {
                     <PauseIcon onClick={handlePlay} className="button w-10 h-10" />
                 )}
 
-                <FastForwardIcon className="button" onClick={spotifyAPI.skipToNext()} />
+                <FastForwardIcon className="button" onClick={() => spotifyAPI.skipToNext()} />
                 <RefreshIcon className="button" />
             </div>
 
