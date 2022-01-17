@@ -51,16 +51,15 @@ function Center() {
 
 
     return (
-        <div className="flex-grow relative h-screen overflow-y-scroll scrollbar-hide">
-            <div className="absolute top-3 left-2 cursor-pointer md:hidden">
-                <Image onClick={() => setShowSidebar(!showSidebar)} src={logo} height={50} width={50} alt="" />
-            </div>
-
-            <header className="absolute top-3 md:top-5 right-2 md:right-8">
+        <div className="flex-grow items-end relative h-screen overflow-y-scroll scrollbar-hide">
+            <header>
+                <div className="absolute top-2 left-2 cursor-pointer md:hidden">
+                    <Image onClick={() => setShowSidebar(!showSidebar)} src={logo} height={50} width={50} alt="" />
+                </div>
                 <div 
                     onClick={signOut} 
-                    className="flex items-center bg-black space-x-3 opacity-80 hover:opacity-90 
-                        cursor-pointer rounded-full p-1 pr-2 text-white"
+                    className="flex absolute items-center bg-black space-x-3 opacity-80 hover:opacity-90 
+                        cursor-pointer rounded-full p-1 pr-2 text-white top-2 md:top-5 right-2 md:right-8"
                 >
                         <img className="rounded-full w-10 h-10" src={session?.user.image} alt="" />
                     <h2 className="pr-2">{session?.user.name}</h2>

@@ -85,7 +85,7 @@ function Player() {
                 <RefreshIcon className="button" />
             </div>
 
-            <div className="flex items-center space-x-3 md:space-x-4 mb-3 md:mb-0 justify-end order-2 md:order-3">
+            <div className="flex items-center space-x-3 md:space-x-4 mb-5 px-1 md:mb-0 justify-end order-2 md:order-3">
                 {volume !== 0 ? (
                     <VolumeUpIcon onClick={() => setVolume(0)} className="w-4 h-4 md:button" />
                 ) : (

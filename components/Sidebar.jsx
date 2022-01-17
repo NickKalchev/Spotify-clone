@@ -14,23 +14,9 @@ import logo from '../public/login_logo.png';
 function Sidebar() {
     const { data: session, status } = useSession();
     const [playlists, setPlaylists] = useState([]);
-   // const [width, setWidth] = useState();
     const [playlistId, setPlaylistId] = useRecoilState(playlistIdState);
     const showSidebar = useRecoilValue(currentSidebarShowState);
     const spotifyAPI = useSpotify();
-
-    // const handleWindowSizeChange = () => {
-    //     setWidth(window.innerWidth);
-    // };
-
-    // useEffect(() => {
-    //     window.addEventListener('resize', handleWindowSizeChange);
-    //     return () => {
-    //         window.removeEventListener('resize', handleWindowSizeChange);
-    //     }
-    // }, []);
-
-    // const isMobile = width <= 850;
 
     useEffect(() => {
         if(spotifyAPI.getAccessToken()){
@@ -38,7 +24,7 @@ function Sidebar() {
                 setPlaylists(data.body.items);
             })
         };
-    }, [session, spotifyAPI])
+    }, [session, spotifyAPI]);
 
 
     return (
@@ -111,6 +97,6 @@ function Sidebar() {
             )}
         </>
     )
-}
+};
 
-export default Sidebar
+export default Sidebar;
