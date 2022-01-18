@@ -32,12 +32,22 @@ function Sidebar() {
             {(showSidebar && isMobile) ? (
                 <>
                 <div className="text-gray-500 p-3 text-xs border-r border-gray-900 overflow-y-scroll
-                    h-screen scrollbar-hide flex-col">
-                        <div className="flex pl-1 mb-8">
-                            <Image src={logo} width={130} height={40} alt="" />
-                        </div>
+                    h-screen scrollbar-hide flex-col pr-8 -mr-5">
         
-                        <div className="space-y-4">
+                        <div className="space-y-4 mt-16">
+                                <button className="flex items-center space-x-2 font-semibold text-xs">
+                                    <HomeIcon className="h-5 w-5" />
+                                    <p>Home</p>
+                                </button>
+                                <button className="flex items-center space-x-2 font-semibold text-xs">
+                                    <SearchIcon className="h-5 w-5" />
+                                    <p>Search</p>
+                                </button>
+                                <button className="flex items-center space-x-2 font-semibold text-xs">
+                                    <ViewBoardsIcon className="h-5 w-5" />
+                                    <p>Library</p>
+                                </button>
+                                <hr className="border-t-[0.1px] border-gray-900" />
                             <h1 className="text-white font-bold">Playlists</h1>
                                 {playlists.map(playlist => (
                                     <p key={playlist.id} onClick={() => setPlaylistId(playlist.id)} className="cursor-pointer hover:text-white">

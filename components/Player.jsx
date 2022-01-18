@@ -63,7 +63,7 @@ function Player() {
     return (
         <div className="text-white h-24 bg-gradient-to-b from-black to-gray-900
             grid grid-cols-1 grid-rows-1 md:grid-cols-3 text-xs md:text-base px-2 md:px-8">
-            <div className="flex items-center -mb-4 md:mb-0 space-x-4 order-2">
+            <div className="flex items-center -mb-7 md:mb-0 space-x-4 order-2">
                 <img className='h-10 w-10' src={songInfo?.album.images?.[0].url} alt="" />
                 <div className="">
                     <h3>{songInfo?.name}</h3>
